@@ -1,0 +1,18 @@
+{% extends "base.jinja" %}
+
+{% block content %}
+    <p> hi hi hi </p>
+    {% for book in books_to_display %}
+        <div class="book">
+            <h2> {{book.title}}</h2>
+            <h4>Author:  {{book.author.id}}</h4>
+            <h4>Genre:  {{book.genre}}</h4>
+            <form action="/books/delete/{{book.id}}" method="post">
+                <input type="submit" value="Submit"/>
+            </form>
+
+        </div>
+    {% endfor %}
+
+
+{% endblock content %}
